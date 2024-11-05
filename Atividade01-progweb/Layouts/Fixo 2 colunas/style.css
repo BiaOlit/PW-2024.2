@@ -1,0 +1,25 @@
+#wrapper{
+    width:960px;
+}
+
+#main{
+    float:left;
+    width: 650px;
+    margin: 0 20px;
+    background-color: lightblue;
+}
+
+#extras {
+    float: left;
+    width: 250px;
+    margin: 0 20px 0 0;
+    background-color: lightseagreen;
+}
+
+#header{
+    background-color:lightskyblue ;
+}
+#footer {
+    clear: left;
+    background-color:lightskyblue;
+}
