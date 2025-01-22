@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Preço da Bitcoin - <%= moeda %></title>
+</head>
+<body>
+    <h1>Preço da Bitcoin em <%= moeda %></h1>
+    <p>Preço atual: <strong><%= data.bpi[moeda].rate %> <%= data.bpi[moeda].description %></strong></p>
+    <p>Última atualização: <%= data.time.updated %></p>
+    <a href="/">Voltar</a>
+</body>
+</html>
