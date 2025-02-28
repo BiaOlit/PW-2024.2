@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - 5 Seconds of Summer</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-5">
+        <h1>Blog - 5 Seconds of Summer</h1>
+    </header>
+
+    <div class="container my-5">
+        <a href="/blog/novo" class="btn btn-primary">Criar Novo Post</a>
+        <div class="row">
+            <% posts.forEach(post => { %>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="<%= post.imagem %>" class="card-img-top" alt="<%= post.titulo %>">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= post.titulo %></h5>
+                            <p class="card-text"><%= post.conteudo.substring(0, 100) %>...</p>
+                            <p class="card-text">Likes: <%= post.likes %></p>
+
+                          
+                            <form action="/blog/<%= post._id %>/like" method="POST">
+                                <button type="submit" class="btn btn-danger">Curtir</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

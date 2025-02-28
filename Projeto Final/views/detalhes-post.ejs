@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= post.titulo %> - Detalhes</title>
+    <link rel="stylesheet" href="/css/styles.css"> 
+</head>
+<body>
+    <header style="background-color: #333; color: white; padding: 20px; text-align: center;">
+        <h1><%= post.titulo %></h1>
+    </header>
+
+    <div class="container my-5">
+        
+        <h3>Publicado em: <%= post.dataPublicacao.toLocaleDateString('pt-BR') %></h3>
+
+        <div class="post-content">
+            <p><%= post.conteudo %></p>
+        </div>
+
+        
+        <% if (post.imagem) { %>
+            <img src="<%= post.imagem %>" alt="Imagem do Post" class="img-fluid">
+        <% } %>
+
+        
+        <div class="likes mt-3">
+            <form action="/blog/<%= post._id %>/like" method="POST">
+                <button type="submit" class="btn btn-primary">Curtir (<%= post.likes %>)</button>
+            </form>
+        </div>
+
+        <a href="/blog" class="btn btn-secondary mt-3">Voltar para a lista de posts</a>
+    </div>
+
+    <footer style="background-color: #333; color: white; padding: 20px; text-align: center;">
+        <p>&copy; 2025 5 Seconds of Summer</p>
+    </footer>
+    <script src="/js/script.js"></script>
+</body>
+</html>

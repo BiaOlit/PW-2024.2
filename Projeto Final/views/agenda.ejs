@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Shows - 5 Seconds of Summer</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header style="background-color: #333; color: white; padding: 20px; text-align: center;">
+        <h1>Agenda de Shows da Banda 5 Seconds of Summer</h1>
+        <nav>
+            <a href="/" style="color: white; margin: 10px;">Home</a>
+            <a href="/discografia" style="color: white; margin: 10px;">Discografia</a>
+            <a href="/integrantes" style="color: white; margin: 10px;">Integrantes</a>
+        </nav>
+    </header>
+
+    <div class="container my-5">
+        <h2>Próximos Shows</h2>
+        <ul>
+            <% eventos.forEach(evento => { %>
+                <li>
+                    <strong><%= evento.evento %></strong><br>
+                    <em>Data: <%= evento.data.toLocaleDateString() %></em><br>
+                    <p>Local: <%= evento.local %></p>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+
+    <footer style="background-color: #333; color: white; padding: 20px; text-align: center;">
+        <p>&copy; 2025 5 Seconds of Summer</p>
+    </footer>
+    <script src="/js/script.js"></script>
+</body>
+</html>
